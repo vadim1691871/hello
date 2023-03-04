@@ -1,14 +1,16 @@
-# 2. Пользователь вводит время в секундах. Переведите время в часы, минуты и секунды и выведите в формате
-# чч:мм:сс. Используйте форматирование строк.
+ Для списка реализовать обмен значений соседних элементов, т.е.
+ Значениями обмениваются элементы с индексами 0 и 1, 2 и 3 и т.д. При нечетном количестве элементов последний сохранить на своем месте.
+ Для заполнения списка элементов необходимо использовать функцию input().
 
-time_sec = int(input('Введите число: '))
-hours = time_sec//3600
-hours_res = (hours) if hours > 10 else ('0' + str(hours))
-minutes = (time_sec % 3600)//60
-minutes_res = (minutes) if minutes > 10 else ('0' + str(minutes))
-seconds = (time_sec % 3600) % 60
-seconds_res = (seconds) if seconds > 10 else ('0' + str(seconds))
-if hours > 24:
-    print('Количество полученных часов превышает количество часов в сутка, скоректируйте ввод.')
-else:
-    print(f'Московское время: {hours_res}:{minutes_res}:{seconds_res}')
+element_count = int(input("Введите количество элементов списка "))
+my_list = []
+i = 0
+element = 0
+while i < element_count:
+    my_list.append(input("Введите значение списка "))
+    i += 1
+
+for elem in range(int(len(my_list)/2)):
+        my_list[element], my_list[element + 1] = my_list [element + 1], my_list[element]
+        element += 2
+print(my_list)
